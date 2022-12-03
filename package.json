@@ -1,14 +1,23 @@
 {
-  "name": "typescript_course_for_beginners",
+  "name": "typescript-basic",
   "version": "1.0.0",
-  "description": "Understanding TypeScript, Academind course",
+  "description": "New package for learning Typescript",
   "main": "app.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "lite-server"
   },
-  "author": "hpdipto",
-  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajinChen/typescript-basic.git"
+  },
+  "author": "Ajin Chen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ajinChen/typescript-basic/issues"
+  },
+  "homepage": "https://github.com/ajinChen/typescript-basic#readme",
   "devDependencies": {
-    "lite-server": "^2.5.4"
+    "lite-server": "^2.6.1"
   }
 }
