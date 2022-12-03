@@ -1,0 +1,14 @@
+{
+  "name": "typescript_course_for_beginners",
+  "version": "1.0.0",
+  "description": "Understanding TypeScript, Academind course",
+  "main": "app.js",
+  "scripts": {
+    "start": "lite-server"
+  },
+  "author": "hpdipto",
+  "license": "MIT",
+  "devDependencies": {
+    "lite-server": "^2.5.4"
+  }
+}
