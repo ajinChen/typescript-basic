@@ -36,6 +36,34 @@ const person4: {
     age: 27
 }
 
-// 5. Array
+// 5. Array (strict type or any flexible type)
+let arr1: string[];
+let arr2: number[];
+let arr3: boolean[];
+let arr4: object[];
+let arr5: any[];
+arr5 = ["sport", 4.01, true];
+
+arr5.push("admin")
+arr5[1] = 5.0
+
+// 6. Tuple (Fixed-length Fixed-type array), be aware about .push, it will break the tuple
+let roles: [number, string, boolean]
+roles = [1.1, "Ajin", true]
+roles.push("Error but work")
+
+// 7. Enum
+enum Role {
+    ADMIN = 0,
+    WRITE = 1,
+    READ_ONLY = 2
+};
+const role_num = Role.ADMIN;
+
+// 8. Any (no type assignment)
+let anything1: any;
+const anything2: any = 8.10;
+
+
 
 
