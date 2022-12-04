@@ -10,6 +10,22 @@ console.log({a:123} === {a:123}); // false
 import { deepEqual } from "assert";
 console.log(deepEqual({a:123},{a:123})); // true
 
+// Boolean Operation
+// 1. And
+console.log(true && false); // false
+// 2. Or
+console.log(true || false); // true
+// 3. Falsy
+// string: '' -> false
+// number: 0 or NaN -> false
+// null or undefined -> false
+// 4. Truthy
+// empty object, like {}, [] -> true
+// not empty string -> true
+// 5. Convert value into boolean (!! pattern)
+console.log(!!"any string convert to true")
+console.log(!!"")
+
 // Null & Undefined (Null Check)
 // Undefined: something hasn't been initialized
 // Null: something is currently unavailable
@@ -35,4 +51,5 @@ function foo(): {a: number, b?: number} {
     return {a:1}
 }
 
-//
+// 
+

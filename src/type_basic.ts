@@ -1,7 +1,5 @@
 // Basic Type:
 
-import { PassThrough } from "stream";
-
 // 1. number (double-precision 64bit) 
 let num1: number;
 num1 = 2.0;
@@ -21,7 +19,9 @@ let str1: string;
 str1 = "Next one pls";
 const str2: string = 'Ajin Chen';
 const str3: string = "Ajin Chen";
-const str4: string = `Ajin Chen`;
+// can use ${var} to include variable value in string 
+let randomString = "AjinChen"
+const str4: string = `Ajin Chen repeat ${randomString}`;
 
 // 3. boolean
 let bool1: boolean;
@@ -58,6 +58,14 @@ arr5 = ["sport", 4.01, true];
 arr5.push("admin")
 arr5[1] = 5.0
 
+// Common methods
+// pop() / push() elements to the array bottom
+// shift() / unshift() elements to the array beginning
+// includes(), check if contains element
+// concat(), join two arrays
+// indexOf() / lastIndexOf()
+// sort(), slice(), join()
+
 // 6. Tuple (Fixed-length Fixed-type array), be aware about .push, it will break the tuple
 let roles: [number, string, boolean]
 roles = [1.1, "Ajin", true]
@@ -70,6 +78,8 @@ enum Role {
     READ_ONLY = 2
 };
 const role_num = Role.ADMIN;
+Role.READ_ONLY; // return 2
+Role[2]; //return READ_ONLY (reverse mapping)
 
 // 8. Any (no type assignment)
 let anything1: any;

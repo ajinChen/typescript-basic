@@ -19,5 +19,9 @@
   "homepage": "https://github.com/ajinChen/typescript-basic#readme",
   "devDependencies": {
     "lite-server": "^2.6.1"
+  },
+  "dependencies": {
+    "@types/big.js": "^6.1.6",
+    "big.js": "^6.2.1"
   }
 }

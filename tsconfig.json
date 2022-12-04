@@ -102,7 +102,7 @@
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
   },
   "exclude": [
-    "**/type_basic.ts",
+    "**/*_basic.ts",
     "*.dev.ts", // any file follow this pattern
     "**/*.dev.ts", // any file under any folder follow this pattern
     "node_modules" // need to exclude otherwise will slowdown the speed
