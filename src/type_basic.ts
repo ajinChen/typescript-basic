@@ -2,10 +2,19 @@
 
 import { PassThrough } from "stream";
 
-// 1. number (includes float, int, double) 
+// 1. number (double-precision 64bit) 
 let num1: number;
 num1 = 2.0;
 const num2: number = 1.0;
+// integer
+console.log(Number.MIN_SAFE_INTEGER, Number.MAX_SAFE_INTEGER);
+console.log(Number.isSafeInteger(Number.MAX_SAFE_INTEGER));
+// NaN
+console.log(Number.isNaN(NaN));
+//Infinity
+console.log(Number.MAX_SAFE_INTEGER + 10**100);
+console.log(1/0);
+
 
 // 2. string
 let str1: string;
