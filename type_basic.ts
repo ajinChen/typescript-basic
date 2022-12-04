@@ -64,6 +64,27 @@ const role_num = Role.ADMIN;
 let anything1: any;
 const anything2: any = 8.10;
 
+// 9. Union-types assign
+function combine(input1: number | string, input2: number | boolean) {
+    let result;
+    if (typeof input1 === "number" && typeof input2 === "number") {
+        result = input1 + input2;
+    } else {
+        result = input1.toString() + input2.toString();
+    }
+    return result;
+}
+
+// 10. Literal-type (only support the values in type)
+const liter_num = 5.6;
+let ops_result: "as-number" | "as-text";
+ops_result = "as-number";
+ops_result = "as-any";
+
+// 11. Alias-type (Customed-type)
+type Combinable = number | string | boolean;
+type ConversionDescriptor = "as-number" | "as-text";
+
 
 
 
