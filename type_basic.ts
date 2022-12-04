@@ -1,5 +1,7 @@
 // Basic Type:
 
+import { PassThrough } from "stream";
+
 // 1. number (includes float, int, double) 
 let num1: number;
 num1 = 2.0;
@@ -85,6 +87,47 @@ ops_result = "as-any";
 type Combinable = number | string | boolean;
 type ConversionDescriptor = "as-number" | "as-text";
 
+// 12. Void-type or Undefined-type (didn't return anything)
+function add(n1: number, n2: number) {
+    return n1 + n2;
+}
 
+function printResult(num: number) {
+    console.log('Result: ' + num);
+}
 
+let voidvalue1: void;
+let voidvalue2: undefined;
 
+function printResult1(num: number): void {
+    console.log('Result: ' + num);
+}
+
+function printResult2(num: number): undefined {
+    console.log('Result: ' + num);
+    return;
+}
+
+// 13. Function-type
+let combineValue1: Function;
+combineValue1 = add;
+console.log(combineValue1(8, 8));
+
+let combineValue2: () => any; // any function can be assigned
+let combineValue3: (a: number, b: number) => number; // the function assigned need meet the requirement
+
+// 14. Unknown-type (store any value)
+let userInput: unknown;
+userInput = 5.0;
+userInput = "Ajin";
+
+// 15. never-type for never stop function return type
+function generateError(message: string, code: number): never {
+    throw {message: message, errorCode: code};
+}
+
+function neverStop(numPrint: number): never {
+    while (true) {
+        console.log(numPrint)
+    }
+}
