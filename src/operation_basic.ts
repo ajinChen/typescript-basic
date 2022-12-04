@@ -15,11 +15,13 @@ console.log(deepEqual({a:123},{a:123})); // true
 console.log(true && false); // false
 // 2. Or
 console.log(true || false); // true
-// 3. Falsy
+// 3. Not
+console.log(!true); 
+// 4. Falsy
 // string: '' -> false
 // number: 0 or NaN -> false
 // null or undefined -> false
-// 4. Truthy
+// 5. Truthy
 // empty object, like {}, [] -> true
 // not empty string -> true
 // 5. Convert value into boolean (!! pattern)
@@ -51,5 +53,9 @@ function foo(): {a: number, b?: number} {
     return {a:1}
 }
 
-// 
+// 4. self-increment
+let increNum: number = 0;
+console.log(increNum++);
+console.log(increNum--);
 
+// 5. Arithmetic Operation, Relational Operation, Bitwise Operation and Assignment Operation is same as Python.
