@@ -30,12 +30,12 @@ let strArr: Stringlist = {};
 strArr["TS"] = "TypeScript";
 
 // 4. Optional Property (don't need to have this property, end with ?)
-interface IEmployee {
+interface IEmployeee {
     empCode: number;
     empName: string;
     empMgr?: string;
 }
-let emp1: IEmployee = {
+let emp1: IEmployeee = {
     empCode: 1,
     empName: "Ajin"
 };
@@ -62,8 +62,8 @@ let emp2: GoogleEmp = {
     empCode: 6
 }
 
-// 7. Interface of Class
-interface Employee {
+// 7. Interface of Class (Property + Method)
+interface IEmployee {
     // property
     empCode: number;
     name: string;
@@ -71,15 +71,28 @@ interface Employee {
     getManagerName(empCode: number): string;
     getSalary(empCode: number): number;
 }
-class GoogleEmployee implements Employee {
+
+
+
+// Classes (Constructor + Properties + Methods)
+// Constructor is a special type of method which is called when create an object
+
+// 1. Class Implements Interfaces
+interface IPerson {
+    gender: string;
+}
+
+class GoogleEmployee implements IEmployee, IPerson {
     // property
     empCode: number;
     name: string;
+    gender: string;
 
     // constructor
-    constructor(code: number, name: string) {
+    constructor(code: number, name: string, gender: string) {
         this.empCode = code;
         this.name = name;
+        this.gender = gender;
     }
 
     // method
@@ -90,7 +103,116 @@ class GoogleEmployee implements Employee {
         return 'Boss';
     }
 }
-let emp3 = new GoogleEmployee(1, 'Ajin');
+
+// 2. Create new object from the class
+let emp3 = new GoogleEmployee(1, 'Ajin', 'male');
+
+// 3. Inheritance (extends)
+class Human {
+    name: string;
+    constructor(name: string) {
+        this.name = name;
+    }
+}
+
+class Employee extends Human {
+    empCode: number;
+    constructor(empCode: number, name: string) {
+        // inheritance from superclass
+        super(name);
+        this.empCode = empCode;
+    }
+}
+
+// 4. Method Overriding
+// If not override, will use parent method
+// If override, will use new define method in current class
 
 
-// Classes
+
+// Abstract Class
+// Abstract classes are mainly for inheritance and can't create an instance of an abstract class
+// Abstract classes define behavior (abstract methods) of class, which can define methods from interface
+abstract class APerson implements IPerson{
+    // abstract property
+    abstract empCode: number;
+    gender: string;
+
+    constructor(gender: string) {
+        this.gender = gender;
+    }
+
+    // abstract class
+    abstract findSalary(name: string): number;
+
+    // normal class
+    display(): void {
+        console.log(this.gender);
+    }
+}
+
+class Person extends APerson {
+    name: string;
+    empCode: number;
+
+    constructor(name: string, gender: string, empCode: number) {
+        super(gender);
+        this.name = name;
+        this.empCode = empCode;
+    }
+
+    findSalary(name: string): number {
+        return 200000;
+    }
+}
+
+
+
+// Data Modifiers
+// The concept of 'encapsulation' is used to make class members public or private.
+
+// 1. public (anywhere)
+// By default, all members of a class in TS are public. Public members can be accessed anywhere without any restrictions.
+class publicData {
+    public data1: string;
+    data2: number;
+}
+let pubData = new publicData();
+pubData.data1 = 'data can be assigned';
+pubData.data2 = 100;
+
+// 2. private (current class)
+// The private access modifier ensures that classes are visible only to that class and are not accessible outside the containing class.
+class privateData {
+    private data1: string;
+    data2: number;
+}
+let privData = new privateData();
+// privData.data1 = 'data cannot be assigned';
+privData.data2 = 100;
+
+// 3. protected (current class and subclass)
+// The protected access modifier can be only accessed using their deriving classes and current class.
+class protectedData {
+    empName: string;
+    protected empCode: number;
+
+    constructor(name: string, code: number) {
+        this.empName = name;
+        this.empCode = code;
+    }
+}
+
+class getProtectedData extends protectedData {
+    department: string;
+
+    constructor(name: string, code: number, department: string) {
+        super(name, code);
+        this.department = department;
+    }
+
+    display(): void {
+        // can access protected data in subclass and current class
+        console.log(this.empCode)
+    }
+}
