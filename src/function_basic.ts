@@ -3,7 +3,7 @@ function addValues(n1: number, n2: number): number {
     return n1 + n2;
 }
 
-// 2. Closure
+// 2. Function Closure
 // A function can use any variables defined in the outer scope
 function outerFunction(arg: string) {
     const variableInOuterFunction = arg;
@@ -23,3 +23,5 @@ function outerFunctionReturn(arg: string) {
 }
 let innerFunction = outerFunctionReturn("This is Closure even has return!");
 innerFunction()
+
+// 

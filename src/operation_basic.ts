@@ -55,7 +55,8 @@ function foo(): {a: number, b?: number} {
 
 // 4. self-increment
 let increNum: number = 0;
-console.log(increNum++);
-console.log(increNum--);
+increNum++;
+increNum--;
+console.log(increNum);
 
 // 5. Arithmetic Operation, Relational Operation, Bitwise Operation and Assignment Operation is same as Python.
