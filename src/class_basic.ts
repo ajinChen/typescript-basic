@@ -217,7 +217,7 @@ class getProtectedData extends protectedData {
     }
 }
 
-// readonly (anywhere but immutable)
+// 4. readonly (anywhere but immutable)
 class readOnlyedData {
     empName: string;
     readonly empCode: number;
@@ -231,3 +231,21 @@ let obj4 = new readOnlyedData('Ajin', 3);
 obj4.empCode // works
 // obj4.empCode = 4; Don't work
 
+// 5. static (Access data/method without create instance)
+// The static members of a class are accessed using the class name and dot notation without creating an object
+class Circle {
+    // static property, can exist same name with/without static
+    static pi: number = 3.14;
+    pi: number = 3.1415;
+
+    // static method
+    static calculateArea(radius: number) {
+        return this.pi * radius * radius;
+    }
+    calculateArea(radius: number) {
+        return this.pi * radius * radius * radius;
+    }
+}
+// Access property and method without creating instance
+Circle.pi;
+Circle.calculateArea(10);
