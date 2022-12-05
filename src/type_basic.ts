@@ -150,3 +150,7 @@ function neverStop(numPrint: number): never {
         console.log(numPrint)
     }
 }
+
+// 16. readonly data type (Readonly<T>, immutable)
+let readonlyString: Readonly<string>;
+let readonlyBoolean: Readonly<boolean>;

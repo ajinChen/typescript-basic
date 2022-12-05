@@ -216,3 +216,18 @@ class getProtectedData extends protectedData {
         console.log(this.empCode)
     }
 }
+
+// readonly (anywhere but immutable)
+class readOnlyedData {
+    empName: string;
+    readonly empCode: number;
+
+    constructor(name: string, code: number) {
+        this.empName = name;
+        this.empCode = code;
+    }
+}
+let obj4 = new readOnlyedData('Ajin', 3);
+obj4.empCode // works
+// obj4.empCode = 4; Don't work
+
