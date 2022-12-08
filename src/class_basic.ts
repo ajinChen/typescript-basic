@@ -279,3 +279,16 @@ class Frame implements Iterator<string> {
 let frame = new Frame("names", ["s1", "s2", "s3"]);
 frame.next();
 
+
+
+// Generators (lazy iterators)
+// function* to create a generator
+// yield allows a generator function to pause its communication and pass control to an external system
+function* idMaker() {
+    let index = 0;
+    while(index < 10) {
+        yield index++;
+    }
+}
+let gen = idMaker();
+console.log(gen.next());
