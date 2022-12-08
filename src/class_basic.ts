@@ -249,3 +249,33 @@ class Circle {
 // Access property and method without creating instance
 Circle.pi;
 Circle.calculateArea(10);
+
+
+
+// Iterators
+class Frame implements Iterator<string> {
+
+    // property
+    private pointer = 0;
+
+    // constructor
+    constructor(public name: string, public strArray: string[]) { }
+
+    // method
+    public next(): IteratorResult<string> {
+        if (this.pointer < this.strArray.length) {
+            return {
+                done: false,
+                value: this.strArray[this.pointer++]
+            } 
+        } else {
+            return {
+                done: true,
+                value: null
+            }
+        }
+    }
+}
+let frame = new Frame("names", ["s1", "s2", "s3"]);
+frame.next();
+
