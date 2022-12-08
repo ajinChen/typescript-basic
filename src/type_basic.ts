@@ -21,7 +21,9 @@ const str2: string = 'Ajin Chen';
 const str3: string = "Ajin Chen";
 // can use ${var} to include variable value in string 
 let randomString = "AjinChen"
+// template string (pass variable and doing math)
 const str4: string = `Ajin Chen repeat ${randomString}`;
+console.log(`1 and 1 make ${1 + 1}`);
 
 // 3. boolean
 let bool1: boolean;
