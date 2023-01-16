@@ -139,3 +139,26 @@ Promise.race([task1, task2]).then((value) => {
 
 
 // Async Await
+// 1. Asynchronous functions are prefixed with the async keyword; 
+// 2. await suspends the execution until an asynchronous function return promise is fulfilled and unwraps the value from the Promise returned.
+function delay(milliseconds: number, count: number): Promise<number> {
+    return new Promise<number>(resolve => {
+        setTimeout(() => {
+            resolve(count);
+        }, milliseconds)
+    })
+}
+
+// async function always returns a Promise
+async function dramaticWelcome(): Promise<void> {
+    console.log("Hello");
+    for (let i = 0; i < 5; i++) {
+        // await is converting Promise<number> into number
+        const count: number = await delay(500, i);
+        console.log(count)
+    }
+    console.log("World!");
+}
+
+dramaticWelcome();
+
