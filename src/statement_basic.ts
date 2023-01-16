@@ -103,4 +103,13 @@ do {
     j++;
 } while (j < 5)
 
+// 5.try-catch statement
+try {
+    console.log("statement1");
+}
+catch (err) {
+    console.log(err);
+}
+
+
 
