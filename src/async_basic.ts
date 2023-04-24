@@ -1,12 +1,12 @@
 // Diff between Sync and Async
 // 1. Sync style
-//
+//a. execute code line by line and next line will be block by current line
 
 // 2. Async style
 // A few points to keep in mind when working with async functions based on callbacks are:
-// a. Never call the callback twice.
-// b. Never throw an error.
-
+// a. unblock to execute next line code if current code need more time
+// b. use Await to write async function in sync style
+// c. async function / await always return Promise type
 
 // Promise (Important)
 // The main motivation for promises is to bring synchronous style error handling to Async / Callback style code.

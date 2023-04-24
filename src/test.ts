@@ -1,5 +1,25 @@
 // 1. Translate .ts to .js -> tsc / tsc ./src/file_name.ts
 // 2. Execute and compile file -> node ./dist/file_name.js
- 
-let val = "Hello World"
-console.log(val)
+
+function delay(milliseconds: number, count: number): Promise<number> {
+    return new Promise<number>(resolve => {
+            setTimeout(() => {
+                resolve(count);
+            }, milliseconds);
+        });
+}
+
+// async function always returns a Promise
+async function dramaticWelcome(): Promise<void> {
+    console.log("Hello");
+
+    for (let i = 0; i < 5; i++) {
+        // await is converting Promise<number> into number
+        const count = delay(10000, i);
+        console.log(count);
+    }
+
+    console.log("World!");
+}
+
+dramaticWelcome();
